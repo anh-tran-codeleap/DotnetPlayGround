@@ -1,0 +1,6 @@
+@AzureServiceBusMassTransitConsumer_HostAddress = http://localhost:5242
+
+GET {{AzureServiceBusMassTransitConsumer_HostAddress}}/api/activitysummary
+Accept: application/json
+
+###

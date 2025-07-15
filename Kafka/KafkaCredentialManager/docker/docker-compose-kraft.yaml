@@ -1,0 +1,15 @@
+version: '3'
+services:
+  kafka:
+    # To use a given commit of the Kafka source code, use the following line:
+    # build: ./kraft
+    image: apache/kafka:4.0.0
+    restart: always
+    ports:
+      - 9092:29092
+      - 9093:29093
+    volumes:
+      - ./kraft/server.properties:/mnt/shared/config/server.properties
+      - ./kafka_server_jaas.conf:/mnt/shared/config/kafka_server_jaas.conf
+    environment:
+      KAFKA_OPTS: "-Djava.security.auth.login.config=/mnt/shared/config/kafka_server_jaas.conf"

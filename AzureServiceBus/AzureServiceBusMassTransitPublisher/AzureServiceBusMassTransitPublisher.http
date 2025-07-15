@@ -1,0 +1,20 @@
+@AzureServiceBusMassTransitPublisher_HostAddress = http://localhost:5031
+
+POST {{AzureServiceBusMassTransitPublisher_HostAddress}}/api/activity
+Content-Type: application/json
+
+{
+  "title": "Call customer to discuss contract renewal",
+  "description": "Discuss contract renewal",
+  "followUpDate": "2024-07-01T10:00:00+00:00"
+}
+### 
+    
+
+POST {{AzureServiceBusMassTransitPublisher_HostAddress}}/api/activity/event
+Content-Type: application/json
+
+{
+  "title": "Call customer to discuss contract renewal",
+  "followUpDate": "2024-07-01T10:00:00+00:00"
+}
